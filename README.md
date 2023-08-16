@@ -1,4 +1,3 @@
-# blockchain_ballot_dapp
 # Ethereum Blockchain Ballot System dApp
 Th objective is to build a blockchain ballot system to allow voters (Ethereum addresses) to vote for one out of 4 proposals. The chairperson of the ballot will register voters thus giving them the right to vote.
 
