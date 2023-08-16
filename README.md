@@ -35,7 +35,7 @@ The module deploy_contract.py compiles and deploys the Smart contract on Ganache
 ### Web3
 Users interact with Ganache-CLI using Python app with Web3.py
 
-### User web interface development
+### Front-end development
 Python Flask Framework is used to build a web interface that allows users to exercise the dApp functionality. The web interface has the following features:
 
 dapp.py is the main app that allows users to interact with the deployed smart contract. It has the following functions:
