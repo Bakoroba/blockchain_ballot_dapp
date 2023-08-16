@@ -32,23 +32,37 @@ Python package solc is used  to compile and deploy the smart contract. The contr
 
 The module deploy_contract.py compiles and deploys the Smart contract on Ganache-CLI
 
-### Web3
 Users interact with Ganache-CLI using Python app with Web3.py
 
 ### Front-end development
-Python Flask Framework is used to build a web interface that allows users to exercise the dApp functionality. The web interface has the following features:
+Based on Python Flask Framework
+Allows users to interact with the dApp  Implemented modules:
+- index.html module: Web interface landing page displaying the actions available to the user
+- home.html module: Allows user to go back to the landing page after performing an action
+- register.html module: Pass voter address to dApp for registration
+- registered.html module: Displays registration confirmation page
+- vote.html module: Pass voter selected proposal to dApp for validating the choice
+- voted.html module: Display the confirmation page of the vote
+- winningProposal.html module: Pass the request to dApp to fetch the winning proposal
+- winner.html module: Display the winning proposal
+- count.html function: Pass the request to dApp to the number of voters per proposal
+- getCountresult.html module: Display the number of voters per proposal
 
-dapp.py is the main app that allows users to interact with the deployed smart contract. It has the following functions:
-- register function: GET data form register.html page.
-- registered function: POST data to registered.html page
-- vote function: GET data from vote.html page.
-- registered function: POST data to registered.html page
-- winningProposal
-- winner
-- count function
-- getCountresult function
-
-allow users to register 
+### Backend interface
+This is the dApp engine, it  allows interaction between the deployed contract and the front-end interface. 
+1. deployconract.py module: 
+- Compile and deploy the contract on Ganache local blockchain
+- Make the ABI and BYCODE available to the main dApp.y engine
+2. dapp.py module: Main dApp engine
+- register function: Build the web form to get user registration data
+- registered function: Execute registration on the blockchain and pass the result to the front-end for display
+- vote function: Build the web form to get  voter address and choice of proposal
+- voted function: Execute the vote on the blockchain and pass the result to the front-end for display
+- winningProposal function: Build the form to fetch the winning proposal
+- winner function: Execute the request on the blockchain to get the winning proposal
+- count function: Build the request to get the  number of voters per proposal
+- getCountresult function: : Execute the request on the blockchain to get the number of vote per proposal
+ 
 ### Web UI to interact with the smart contract
 - Register a wallet address
   To register a voter (i) Click on 'Register' (ii) select the appropriate address from the dropdown menu and click on 'Register'
