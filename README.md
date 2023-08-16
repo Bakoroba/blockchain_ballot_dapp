@@ -4,10 +4,10 @@ Th objective is to build a blockchain ballot system to allow voters (Ethereum ad
 The number of voters is limited to the default number of public addresses provided by the Ganache-CLI. 
 
 The 4 proposals registered voters will vote on are:
-i.   Financial Programming
-ii.  Machine Learning Applications in Finance
-iii. Blockchain and Cryptocurrency
-iv.  FinTech Bootcamp
+- Financial Programming
+- Machine Learning Applications in Finance
+- Blockchain and Cryptocurrency
+- FinTech Bootcamp
 ## User story
 - The chairperson registers a voter using their Ethereum smart contract
 - Registration will give the user one and only one vote
