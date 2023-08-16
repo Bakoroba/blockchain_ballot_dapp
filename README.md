@@ -11,7 +11,7 @@ The 4 proposals registered voters will vote on are:
 ## User story
 - The chairperson registers a voter using their Ethereum smart contract
 - Registration will give the user one and only one vote
-- Only A register voter is allowed to vote
+- Only a register voter is allowed to vote
 - The voter can vote for only one of the 4 proposals on the ballot
 - The number of voters is only limited by the number of Ethereum addresses on Ganache-CLI blockchain
 - The ballot chairperson can get the total number of vote per proposals
@@ -23,7 +23,7 @@ The 4 proposals registered voters will vote on are:
 The smart contract is written using Solidity language. The contract has the following functions:
 - register: register a voter so that they have a right to vote a voter
 - vote: allows a voter to vote for a single proposal
-- wininngProposal: get the winning proposal
+- winningProposal: get the winning proposal
 - getCount: get the number of votes per proposals on a the ballot
 
 2. Smart contract compilation and deployment
