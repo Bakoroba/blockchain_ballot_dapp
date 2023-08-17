@@ -48,7 +48,8 @@ Allows users to interact with the dApp  Implemented modules:
 - winner.html module: Display the winning proposal
 - count.html function: Pass the request to dApp to the number of voters per proposal
 - getCountresult.html module: Display the number of voters per proposal
-![image](https://github.com/Bakoroba/blockchain_ballot_dapp/assets/7796158/b98691fe-a78b-4f05-ae3c-06f74a93ef92)
+![image](https://github.com/Bakoroba/blockchain_ballot_dapp/assets/7796158/83ddafbb-c2a6-414d-a6c9-c763a33b488c)
+
 
 
 ### Backend interface
