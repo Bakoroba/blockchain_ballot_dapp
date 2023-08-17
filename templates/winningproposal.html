@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+{% block content %}
+    <div class="w3-cell-row" align="center">
+
+	  <div class="w3-container w3-cell w3-mobile">
+          <p><i class="fa fa-address-card fa-5x"></i>
+          <br>Get Winning Proposal</p>
+          <form method="POST" action="{{ url_for('winner') }}" enctype="multipart/form-data">
+            {{ winningproposalform.csrf_token }}
+            <input type="submit" value="Get Winning Proposal">
+          </form>
+      </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,24 @@
+{% extends 'index.html' %}
+{% block content %}
+    <div class="w3-cell-row" align="center">
+
+	  <div class="w3-container w3-cell w3-mobile">
+          <p><i class="fa fa-address-card fa-5x"></i>
+          <br>VOTE</p>
+          <form method="POST" action="{{ url_for('voted') }}" enctype="multipart/form-data">
+            {{ voteform.csrf_token }}
+            <table align="center">
+              <tr>
+                <td>{{ voteform.ethereum_address.label }} :</td>
+                <td>{{ voteform.ethereum_address }}</td>
+              </tr>
+              <tr>
+                <td>{{ voteform.proposals.label }} :</td>
+                <td>{{ voteform.proposals }}</td>
+              </tr> 
+            </table>
+            <input type="submit" value="Vote">
+          </form>
+      </div>
+    </div>
+{% endblock content %}
