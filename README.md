@@ -33,6 +33,7 @@ Python package solc is used  to compile and deploy the smart contract. The contr
 The module deploy_contract.py compiles and deploys the Smart contract on Ganache-CLI
 
 Users interact with Ganache-CLI using Python app with Web3.py
+(insert image of gaanche-cli)
 
 ### Front-end development
 Based on Python Flask Framework
@@ -86,10 +87,15 @@ Linux environment is required for installation. Ubuntu is used for this case. To
 i. Open a terminal and launch ganache-cli: ganache-cli
 ii. Open a second terminal and launch the: pyhton3 dapp.py
 iii. Open a browser and go to the loopback address 12.7.0.0.1:5000
+(insert screenshot of running the app)
 
-## Packages used
+## Technology
 - Python Flask Framework
-- solc
+- solc solidity compiler
 - web3
 - ganache-cli
 - ??? more...
+
+## License
+
+MIT
