@@ -124,9 +124,6 @@ def registered():
         reg_ethaddress=WEB3.eth.accounts[int(request.form['ethereum_address'])],
         #reg_serial=request.form['some_string'],
         reg_accountnumber=request.form['ethereum_address'],
-        reg_receipt=WEB3.eth.get_transaction_receipt(call_contract_function),
-        reg_txhash=HexBytes.hex(transaction_info['hash']),
-        reg_txdata=HexBytes(transaction_info['input']),
         contractaddress=ASSETREGISTER.address
     )
 @APP.route("/voted", methods=['POST'])
@@ -155,9 +152,6 @@ def voted():
         reg_ethaddress=address,
         #reg_serial=request.form['some_string'],
         reg_accountnumber=address,
-        reg_receipt=WEB3.eth.get_transaction_receipt(call_contract_function1),
-        reg_txhash=HexBytes.hex(transaction_info['hash']),
-        reg_txdata=HexBytes(transaction_info['input']),
         contractaddress=ASSETREGISTER.address,
         reg_serial = request.form['proposals']
     )
@@ -206,9 +200,6 @@ def getcountresult():
     print(f.read())
     return render_template(
         'getcountresult.html',
-        # pass these variables to the html template
-        #reg_ethaddress=call_contract_function1
-        #reg_ethaddress = pprint(dict(zip(proposal_list, call_contract_function1)))
         reg_ethaddress = f.getvalue()
     )
   
