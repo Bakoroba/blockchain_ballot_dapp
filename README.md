@@ -1,5 +1,5 @@
 # Ethereum Blockchain Ballot System dApp
-Th objective is to build a blockchain ballot system to allow voters (Ethereum addresses) to vote for one out of 4 proposals. The chairperson of the ballot will register voters thus giving them the right to vote.
+The objective is to build a blockchain ballot system to allow voters (Ethereum addresses) to vote for one out of 4 proposals. The chairperson of the ballot will register voters thus giving them the right to vote.
 
 The number of voters is limited to the default number of public addresses provided by the Ganache-CLI. 
 
@@ -32,8 +32,9 @@ Python package solc is used  to compile and deploy the smart contract. The contr
 
 The module deploy_contract.py compiles and deploys the Smart contract on Ganache-CLI
 
-Users interact with Ganache-CLI using Python app with Web3.py
-(insert image of gaanche-cli)
+Ganache-cli is the provider interface to be used for Web3
+![image](https://github.com/Bakoroba/blockchain_ballot_dapp/assets/7796158/8646dd51-24c3-461d-a3a6-7ba8a801dce2)
+
 
 ### Front-end development
 Based on Python Flask Framework
