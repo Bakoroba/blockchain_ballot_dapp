@@ -50,8 +50,7 @@ Allows users to interact with the dApp  Implemented modules:
 - count.html function: Pass the request to dApp to the number of voters per proposal
 - getCountresult.html module: Display the number of voters per proposal
 
-![image](https://github.com/Bakoroba/blockchain_ballot_dapp/assets/7796158/83ddafbb-c2a6-414d-a6c9-c763a33b488c)
-
+![image](https://github.com/Bakoroba/blockchain_ballot_dapp/assets/7796158/54aaf558-71dd-4fd9-b4d1-c72a73b2d53c)
 
 
 ### Backend interface
@@ -73,29 +72,32 @@ This is the dApp engine, it  allows interaction between the deployed contract an
 - Register a wallet address
   To register a voter (i) Click on 'Register' (ii) select the appropriate address from the dropdown menu and click on 'Register'
   button (iii) the registration confirmation is displayed on the browser
-  ![image](https://github.com/Bakoroba/blockchain_ballot_dapp/assets/7796158/a00dd9c2-45ff-4c60-a8a2-3b6d45648ee0)
+  ![image](https://github.com/Bakoroba/blockchain_ballot_dapp/assets/7796158/ca508a20-8775-4cd5-9022-5f28b134234e)
 
-  ![image](https://github.com/Bakoroba/blockchain_ballot_dapp/assets/7796158/37f8f3da-3362-40fa-8bea-bcca6d2b4d90)
+  ![image](https://github.com/Bakoroba/blockchain_ballot_dapp/assets/7796158/17bc50a3-6b7b-49b5-9e47-12080c523fc8)
 
 - Use a registered wallet address to vote on only one of the proposals
   To vote (i) Select vote (ii) Select a registered user (iii) select the proposal to vote for (iv) click on 'Vote' (v)    vote 
   confirmation is displayed on the browser
-  ![image](https://github.com/Bakoroba/blockchain_ballot_dapp/assets/7796158/780dd428-8325-44f2-9c29-f34b0c0c51b4)
 
-  ![image](https://github.com/Bakoroba/blockchain_ballot_dapp/assets/7796158/0376e2a0-ef88-4684-b56c-0bb73c990403)
+   ![image](https://github.com/Bakoroba/blockchain_ballot_dapp/assets/7796158/a8f22206-fe36-4016-b1ce-29bd9f667b9f)
+
+  ![image](https://github.com/Bakoroba/blockchain_ballot_dapp/assets/7796158/77301f7d-1b13-49c3-a48b-2d21ac35c05d)
 
 
 - Get the total number of vote per proposals
   To get the total number of vote per proposal (i) click on 'GET Number of vote per proposals' (ii) The number of vote per proposal is displayed in the browser
-  ![image](https://github.com/Bakoroba/blockchain_ballot_dapp/assets/7796158/969b69d5-7087-4a7b-a400-2db52bcc6ccc)
 
-  ![image](https://github.com/Bakoroba/blockchain_ballot_dapp/assets/7796158/9569db67-b434-40fb-9b5b-6cdb49ddf580)
+  ![image](https://github.com/Bakoroba/blockchain_ballot_dapp/assets/7796158/c03ab8aa-89c6-426b-b803-1dc63cedca6f)
+
+  ![image](https://github.com/Bakoroba/blockchain_ballot_dapp/assets/7796158/9702653a-de5e-448e-820e-51448119600d)
+
 
 - Get the winning proposal
     To get the winning proposal (i) click on 'GET winning' (ii) The winning proposal is displayed in the browser
- ![image](https://github.com/Bakoroba/blockchain_ballot_dapp/assets/7796158/3a7bdd70-5dec-4d96-aa19-45baea455993)
+ ![image](https://github.com/Bakoroba/blockchain_ballot_dapp/assets/7796158/5ced1947-75bb-4575-a131-d13666be31a3)
 
-![image](https://github.com/Bakoroba/blockchain_ballot_dapp/assets/7796158/abcfdf83-6144-43b1-8880-42ba8beeffbc)
+ ![image](https://github.com/Bakoroba/blockchain_ballot_dapp/assets/7796158/9c513205-aa6e-48f5-a5c7-44dcbf841c64)
 
  
 ## Installation
