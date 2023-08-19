@@ -49,7 +49,7 @@ contract Ballot {
     // Give a single vote to a proposal.
     function vote(uint8 toProposal) public {
         Voter storage sender = voters[msg.sender];
-        //if (sender.voted || toProposal >= 4 || sender.weight == 0) revert();
+        if(sender.voted || sender.weight == 0) revert();
         sender.voted = true;
         sender.vote = toProposal;
         proposals[toProposal] += sender.weight;
@@ -81,7 +81,7 @@ Ballot = WEB3.eth.contract(
 # send eth from which account?
 WEB3.eth.defaultAccount = WEB3.eth.accounts[0]
 address = WEB3.eth.accounts[0]
-private_key = "0x83036aa7c3ace17b58e64130f313013a3e28a71524d995d2f61d2809ff6a1d13"
+private_key = "0x52ceaf34e1f36e7f739419ff67d1e0c77f550e455508279442582640015e8140"
 
 
 nonce = WEB3.eth.get_transaction_count(address)

@@ -77,12 +77,12 @@ def vote():
     for chooseaccount in WEB3.eth.accounts:
         minus_one = minus_one+1
         form.ethereum_address.choices += [(minus_one, chooseaccount)]
-        
+
     return render_template(
         'vote.html',
         voteform=form,
         contractaddress=ASSETREGISTER.address
-    
+
     )
 @APP.route("/winningproposal", methods=['GET'])
 def winningproposal():
@@ -108,15 +108,14 @@ def getcount():
         winningproposalform=form,
         contractaddress=ASSETREGISTER.address
     )
-    
+
 @APP.route("/registered", methods=['POST'])
 def registered():
     address = WEB3.eth.accounts[0]
-    private_key = "0x83036aa7c3ace17b58e64130f313013a3e28a71524d995d2f61d2809ff6a1d13"
-   
+
     # create the transaction
     call_contract_function = ASSETREGISTER.functions.register(
-        w3.eth.accounts[int(request.form['ethereum_address'])]).transact({'from':address}) 
+        w3.eth.accounts[int(request.form['ethereum_address'])]).transact({'from':address})
     transaction_info = WEB3.eth.get_transaction(call_contract_function)
     return render_template(
         'registered.html',
@@ -124,42 +123,46 @@ def registered():
         reg_ethaddress=WEB3.eth.accounts[int(request.form['ethereum_address'])],
         #reg_serial=request.form['some_string'],
         reg_accountnumber=request.form['ethereum_address'],
+        reg_receipt=WEB3.eth.get_transaction_receipt(call_contract_function),
+        reg_txhash=HexBytes.hex(transaction_info['hash']),
+        reg_txdata=HexBytes(transaction_info['input']),
         contractaddress=ASSETREGISTER.address
     )
 @APP.route("/voted", methods=['POST'])
 def voted():
     address = WEB3.eth.accounts[0]
-    private_key = "0x83036aa7c3ace17b58e64130f313013a3e28a71524d995d2f61d2809ff6a1d13"
-   
+
     if str((request.form['proposals'])) == "Financial Programming":
         proposal = 0
     if str((request.form['proposals'])) == "Machine Learning Applications in Finance":
         proposal = 1
-   
+
     if str((request.form['proposals'])) == "Blockchain and Cryptocurrency":
         proposal = 2
-   
+
     if str((request.form['proposals'])) == "FinTech Bootcamp":
         proposal = 3
     #"Financial Programming", "Machine Learning Applications in Finance","Blockchain and Cryptocurrency", "FinTech Bootcamp")
-    
+
     # create the transaction
-    call_contract_function1 = ASSETREGISTER.functions.vote(proposal).transact({'from':address}) 
+    call_contract_function1 = ASSETREGISTER.functions.vote(proposal).transact({'from':w3.eth.accounts[int(request.form['ethereum_address'])]})
     transaction_info = WEB3.eth.get_transaction(call_contract_function1)
     return render_template(
         'voted.html',
         # pass these variables to the html template
-        reg_ethaddress=address,
+        reg_ethaddress=w3.eth.accounts[int(request.form['ethereum_address'])],
         #reg_serial=request.form['some_string'],
         reg_accountnumber=address,
+        reg_receipt=WEB3.eth.get_transaction_receipt(call_contract_function1),
+        reg_txhash=HexBytes.hex(transaction_info['hash']),
+        reg_txdata=HexBytes(transaction_info['input']),
         contractaddress=ASSETREGISTER.address,
         reg_serial = request.form['proposals']
     )
 @APP.route("/winner", methods=['POST'])
 def winner():
     address = WEB3.eth.accounts[0]
-    private_key = "0x83036aa7c3ace17b58e64130f313013a3e28a71524d995d2f61d2809ff6a1d13"
- 
+
     call_contract_function1 = ASSETREGISTER.functions.winningProposal().call() # create the transaction
     #transaction_info = WEB3.eth.get_transaction(call_contract_function1)
     print('call_contract_function1 ', call_contract_function1)
@@ -169,10 +172,10 @@ def winner():
     if int(call_contract_function1) == 1 :
         winpro = "Machine Learning Applications in Finance"
     if int(call_contract_function1) == 2 :
-        winpro = "Blockchain and Cryptocurrency" 
+        winpro = "Blockchain and Cryptocurrency"
     if int(call_contract_function1) == 3 :
         winpro = "FinTech Bootcamp"
-        
+
     return render_template(
         'winner.html',
         # pass these variables to the html template
@@ -182,27 +185,29 @@ def winner():
 @APP.route("/getcountresult", methods=['POST'])
 def getcountresult():
     address = WEB3.eth.accounts[0]
-    private_key = "0x83036aa7c3ace17b58e64130f313013a3e28a71524d995d2f61d2809ff6a1d13"
-    
+
     #dictionary = dict(zip(keys, values))
     proposal_list = ["Financial Programming", "Machine Learning Applications in Finance","Blockchain and Cryptocurrency", "FinTech Bootcamp"]
     call_contract_function1 = ASSETREGISTER.functions.getCount().call() # create the transaction
     #transaction_info = WEB3.eth.get_transaction(call_contract_function1)
-    
-    #merge call_contract_function1 = [0,0,0,0] and proposal_list into a dictionary 
+
+    #merge call_contract_function1 = [0,0,0,0] and proposal_list into a dictionary
     # to describe the selected proposal to the web UI
-    # call_contract_function1 = 
+    # call_contract_function1 =
     proposal_dict = dict(zip(proposal_list, call_contract_function1))
     proposal_list = ["Financial Programming", "Machine Learning Applications in Finance","Blockchain and Cryptocurrency", "FinTech Bootcamp"]
     f = io.StringIO()
-    pprint.pprint(proposal_dict, f) 
+    pprint.pprint(proposal_dict, f)
     f.seek(0) # move pointer to start of dictionary file
     print(f.read())
     return render_template(
         'getcountresult.html',
+        # pass these variables to the html template
+        #reg_ethaddress=call_contract_function1
+        #reg_ethaddress = pprint(dict(zip(proposal_list, call_contract_function1)))
         reg_ethaddress = f.getvalue()
     )
-  
+
 # Wrapper
 if __name__ == '__main__':
     APP.run(debug=True, host='0.0.0.0', port=5000)
