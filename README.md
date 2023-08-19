@@ -57,7 +57,7 @@ Allows users to interact with the dApp  Implemented modules:
 This is the dApp engine, it  allows interaction between the deployed contract and the front-end interface. 
 1. deployconract.py module: 
 - Compile and deploy the contract on Ganache local blockchain
-- Make the ABI and BYCODE available to the main dApp.y engine
+- Make the ABI and BYTECODE available to the main dApp.y engine
 2. dapp.py module: Main dApp engine
 - register function: Build the web form to get user registration data
 - registered function: Execute registration on the blockchain and pass the result to the front-end for display
@@ -115,7 +115,7 @@ iii. Open a browser and go to the loopback address 12.7.0.0.1:5000
 - solc solidity compiler
 - web3
 - ganache-cli
-- ??? more...
+
 
 ## License
 
