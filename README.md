@@ -119,7 +119,7 @@ iii. Open a browser and go to the loopback address 12.7.0.0.1:5000
 
 ## Contributors
 
--Name: Bakary Sylla, Marcus LeGare, Cherryl Adzang, Yadisa Joiner, and John Nguyen
+Bakary Sylla, Marcus LeGare, Cherryl Adzang, Yadisa Joiner, and John Nguyen
 
 ## License
 MIT
