@@ -119,8 +119,7 @@ iii. Open a browser and go to the loopback address 12.7.0.0.1:5000
 
 ## Contributors
 
--Name: Bakary Sylla, Marcus LeGare, Cherryl Adzang, Yasdisa Joiner, and John Nguyen
+-Name: Bakary Sylla, Marcus LeGare, Cherryl Adzang, Yadisa Joiner, and John Nguyen
 
 ## License
-Specify the details of your project’s license - that is, how others can or cannot use your code and files.
 MIT
